@@ -60,6 +60,7 @@ async function app(yargsInput) {
     } else {
       console.log("Unrecognized Yargs command");
     }
+    await sequelize.close();
 }
 
 app(yargs.argv);
