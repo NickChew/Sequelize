@@ -1,4 +1,4 @@
-const Movie = require("./table");
+const Movie = require("./movietable");
 
 exports.createMovie = async (movieObj) => {
     try {
