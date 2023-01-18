@@ -1,0 +1,13 @@
+
+node src/app.js --create --title "Big" --actor "Tom Hanks" --director "Penny Marshall"
+node src/app.js --create --title "Sphere" --actor "L. Fishborne" --director "Spike Lee"
+node src/app.js --create --title "Spiderman" --actor "Andrew Garfiled" --director "S. Spielberg"
+node src/app.js --title "Spiderman" --updateActor --actor "Toby Mcguire" 
+node src/app.js --title "Spiderman" --updateActor --actor "andy garfiled"
+
+node src/app.js --title "Sphere" --delete   
+node src/app.js --title "Spiderman" --updateDirector --director "Ang Lee"
+node src/app.js --title "Spiderman" --updateDirector --director "S. Spielberg"
+node src/app.js --title "Spiderman" --delete    
+
+node src/app.js --read   
