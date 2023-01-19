@@ -11,3 +11,8 @@ node src/app.js --title "Spiderman" --updateDirector --director "S. Spielberg"
 node src/app.js --title "Spiderman" --delete    
 
 node src/app.js --read   
+
+node src/app.js --create --title "IT" --actor "Tim Curry" --director "Steven King" --addedby "Nick Chew"
+node src/app.js --title "Spiderman" --updateAddedBy --addedBy "Nick Chew" 
+node src/app.js --title "Big" --updateAddedBy --addedBy "Nick Chew"
+node src/app.js --title "Sphere" --updateAddedBy --addedBy "Nick Chew" 

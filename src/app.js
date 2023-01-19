@@ -2,6 +2,8 @@ const yargs = require("yargs");
 const {sequelize} = require ("./db/connection");
 const {createMovie} = require ("./movie/moviefunction");
 const Movie = require("./movie/movietable");
+const Actor = require("./movie/actortable");
+const ActorMovie = require("./movie/actormovietable");
 
 async function app(yargsInput) {
     await sequelize.sync({alter:true});
@@ -11,7 +13,8 @@ async function app(yargsInput) {
       await createMovie({
         title: yargsInput.title,
         actor: yargsInput.actor,
-        director: yargsInput.director
+        director: yargsInput.director,
+        addedBy: yargsInput.addedBy
       });
       console.log("Created Movie");
 
@@ -20,18 +23,29 @@ async function app(yargsInput) {
       const results = await Movie.findAll({}); 
         for (let index = 0; index < results.length; index++) {
           const element = results[index];
-          console.log(`${element.title} Staring ${element.actor} Directed by ${element.director}`);
+          console.log(`${element.title} Staring ${element.actor} Directed by ${element.director} Added By ${element.addedBy}`);
         }
 
     } else if (yargsInput.updateActor) {
       //place code to update actor field here
       // use findOne() to find title want updated then Set() method to change value of actor, then call the save() method.
-      // look at upsert 
+      // look at update/upsert 
       const newActor = await Movie.findOne({ where: { title : yargsInput.title } });
         if (newActor) {
           newActor.actor= yargsInput.actor
           await newActor.save();
           console.log ("Updated Movie Actor Successfully");
+        } else {
+          console.log("Movie not found");
+        }
+
+    } else if (yargsInput.updateAddedBy) {
+      //place code to update who added movie goes here
+      const newaddedBy = await Movie.findOne({ where: { title : yargsInput.title } });
+        if (newaddedBy) {
+          newaddedBy.addedBy= yargsInput.addedBy
+          await newaddedBy.save();
+          console.log ("Updated who added Movie Successfully");
         } else {
           console.log("Movie not found");
         }

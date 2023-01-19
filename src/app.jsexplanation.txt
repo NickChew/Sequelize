@@ -1,0 +1,17 @@
+Code Explanation by Denigma
+
+The code starts by requiring the yargs library. The code then creates a function called app that takes in an input parameter of type YargsInput . This is a class that will be used to store all the arguments passed into this function. The next line calls sync on the sequelize database, which sets up some default settings for how it operates and what it does with data. The alter:true setting tells sequelize to automatically update any existing records when new ones are created or updated. If there is a value in yargsInput called create , then code inside of the if statement will run, otherwise nothing happens because there was no value passed in for create .
+
+The code is for the purpose of creating a movie. The code creates a sequelize connection with the alter:true option. The function then awaits for yargsInput to be available, which is an object that has create as a property. If it does, the function will place code to create a movie here.
+
+The code starts by checking if the user typed in a movie title. If they did, it will create a new Movie object and add it to our list of movies. If not, we'll check if the user typed in "read" as their input. If so, we'll read all of our existing Movies from our database and display them on screen for the user to see. Finally, we have an else statement that checks if the user typed in "create." In this case, it will create a new Movie object with some default values set for us (title: yargsInput.title; actor: yargsInput.actor; director: yargsInput.director).
+The code will list all the movies that have been created. The code above is a snippet from the createMovie function, which is defined in our movie-listing application. The code above will be executed when the user enters the input "create".
+
+The code starts by checking if the input is a string. If it is, then it will use console.log to print out the text of the element that was passed in as an argument. If the input is not a string, then it will check if yargsInput has been updated with new data using updateActor . If so, then code inside of curly braces {} will be executed and printed on screen. If no updates have been made to yargsInput , then code inside of curly braces {} will be executed and printed on screen.
+
+The code is a snippet of the code that would be used to update an actor field in a movie. The first thing you do is find the element you want to update by using the yargsInput.findOne() method, then use the Set() method to change its value. Lastly, call the save() method on your Movie model with this updated data.
+
+The code looks for a Movie with the title yargsInput.title and if it is found, then it updates the actor to be yargsInput.actor . If not, then it logs "Movie not found". The code looks for a Movie with the title yargsInput.title and if it is found, then it updates the actor to be yargsInput.actor . If not, then it logs "Movie not found".
+
+The code is meant to update the actor of a movie that was added by another user. The code above will first check if the inputted yargsInput.updateAddedBy property exists and it does, then it will look for an existing Movie object with the title equal to yargsInput.title . If one is found, then the code will set the actor of this movie to be equal to that of the inputted yargsInput.actor . Finally, it will save this updated Movie object and log in console "Updated Movie Actor Successfully."
+

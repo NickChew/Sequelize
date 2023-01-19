@@ -7,14 +7,24 @@ const Movie = sequelize.define("Movie", {
         allowNull: false,
         unique: true
     },
-    actor: {
-        type: DataTypes.STRING,
-        defaultValue: "Not specified"
-    },
+    // actor: {
+    //     type: DataTypes.STRING,
+    //     defaultValue: "Not specified",
+    //     unique: true
+    // },  
     director: {
         type: DataTypes.STRING,
-        defaultValue: "Not known"
-    }}
-);
+        defaultValue: "Not known",
+        unique: true
+    },
+    addedBy: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        subQuery: false,
+        distinct: true,
+        defaultValue: "Not known",
+        unique: "addedBy"
+    }
+});
 
 module.exports = Movie;
